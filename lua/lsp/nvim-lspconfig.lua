@@ -77,22 +77,9 @@ function udf.lsp.goto_prev_diagnostics()
   })
 end
 
-function udf.lsp.cursor_line()
-  vim.lsp.buf.clear_references()
-  vim.lsp.buf.document_highlight()
-end
-
-local mapping_once_tag = false
-function udf.lsp.mapping_once()
-  if not mapping_once_tag then
-    vim.api.nvim_command [[ autocmd CursorMoved * lua udf.lsp.cursor_line() ]]
-  end
-end
-
 vim.api.nvim_command [[ sign define LspDiagnosticsSignError         text=✗ texthl=LspDiagnosticsSignError       linehl= numhl= ]]
 vim.api.nvim_command [[ sign define LspDiagnosticsSignWarning       text=⚠ texthl=LspDiagnosticsSignWarning     linehl= numhl= ]]
 vim.api.nvim_command [[ sign define LspDiagnosticsSignInformation   text= texthl=LspDiagnosticsSignInformation linehl= numhl= ]]
 vim.api.nvim_command [[ sign define LspDiagnosticsSignHint          text= texthl=LspDiagnosticsSignHint        linehl= numhl= ]]
 
 vim.api.nvim_command [[ autocmd FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR> ]]
-vim.api.nvim_command [[ autocmd CursorMoved * lua udf.lsp.mapping_once() ]]
