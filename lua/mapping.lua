@@ -29,8 +29,7 @@ local maps = {
   },
   lsp = {
     hover = '<Tab>',
-    definition = '<C-Tab>',
-    declaration = '<S-Tab>',
+    definition = '<S-Tab>',
     diagnose = '?',
     diagnose_next = '<C-j>',
     diagnose_prev = '<C-k>',
@@ -109,7 +108,6 @@ universal_normal_keymap(wintabs.close, ':WintabsClose<CR>', { noremap = true })
 local lsp = maps.lsp or {}
 keymap('n', lsp.hover, ':lua udf.lsp.hover()<CR>', { noremap = true })
 keymap('n', lsp.definition, ':lua udf.lsp.definition()<CR>', { noremap = true })
-keymap('n', lsp.declaration, ':lua udf.lsp.declaration()<CR>', { noremap = true })
 keymap('n', lsp.diagnose, ':lua udf.lsp.show_line_diagnostics()<CR>', { noremap = true })
 keymap('n', lsp.diagnose_prev, ':lua udf.lsp.goto_prev_diagnostics()<CR>', { noremap = true })
 keymap('n', lsp.diagnose_next, ':lua udf.lsp.goto_next_diagnostics()<CR>', { noremap = true })
