@@ -9,7 +9,7 @@ lspconfig.clangd.setup{
   -- cmd = { 'clangd', '--background-index', '--limit-results=0' },
 }
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = clangd_background_loader.on_publish_diagnostics_wapper(
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
   vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
     underline = true,
     signs = true,
@@ -19,7 +19,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = clangd_background_loader.o
         spacing = 6,
     },
   }
-))
+)
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
   vim.lsp.handlers.hover, {
     border = "single",
