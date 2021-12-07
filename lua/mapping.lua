@@ -3,8 +3,6 @@ local maps = {
   save = '<C-s>',
   navigator = {
     goto = '<Space>',
-    function_next = 'J',
-    function_prev = 'K',
     insert_left = '<C-h>',
     insert_right = '<C-l>',
     insert_up = '<C-k>',
@@ -83,8 +81,6 @@ universal_normal_keymap(maps.save, ':w<CR>', { noremap = true })
 
 local navigator = maps.navigator or {}
 keymap('n', navigator.goto, ':HopWord<CR>', { noremap = true })
-keymap('n', navigator.function_next, ':TSTextobjectGotoNextStart @function.outer<CR>', { noremap = true })
-keymap('n', navigator.function_prev, ':TSTextobjectGotoPreviousStart @function.outer<CR>', { noremap = true })
 keymap('i', navigator.insert_left, '<Left>', { })
 keymap('i', navigator.insert_right, '<Right>', { })
 keymap('i', navigator.insert_up, '<Up>', { })
