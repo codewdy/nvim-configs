@@ -30,7 +30,7 @@ local configure = {
     },
     colorscheme = 'vscode',
   },
-  workspace = require('utils/path').root_pattern({{"compile_commands.json", "compile_flags.txt", ".root"}, {".git"}}),
+  workspace = require('utils/path').root_pattern({{".root"}, {"compile_commands.json", "compile_flags.txt"}, {".git"}}),
 }
 
 for k, v in pairs(configure.vim.o) do
