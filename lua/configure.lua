@@ -24,6 +24,7 @@ local configure = {
       foldlevelstart = 99,
       signcolumn = 'yes',
       hidden = true,  -- make buffer management can hide buffer without save.
+      cursorline = true,
     },
     g = {
       loaded_matchit = 1,  -- disable matchit becasue ampping troubles.
