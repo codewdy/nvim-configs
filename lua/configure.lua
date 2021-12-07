@@ -17,6 +17,7 @@ local configure = {
       shiftwidth = 2,
       softtabstop = 2,
       colorcolumn = '80',
+      scrolloff = 9999,
       sidescrolloff = 15,
       sidescroll = 1,
       showmatch = true,
@@ -25,7 +26,6 @@ local configure = {
       hidden = true,  -- make buffer management can hide buffer without save.
     },
     g = {
-      scrollfix = 50,
       loaded_matchit = 1,  -- disable matchit becasue ampping troubles.
     },
     colorscheme = 'vscode',

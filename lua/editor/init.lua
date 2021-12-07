@@ -26,6 +26,4 @@ pkg.req({'nvim-telescope/telescope.nvim', config = [[require('editor/telescope')
 
 pkg.req({'voldikss/vim-floaterm', config = [[require('editor/floaterm')]]})
 
-pkg.req({'vim-scripts/scrollfix'})
-
 pkg.req({'codewdy/source-header-switcher.nvim', config = [[require('editor/source-header-switcher')]]})
