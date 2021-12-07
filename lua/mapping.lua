@@ -9,6 +9,8 @@ local maps = {
     insert_right = '<C-l>',
     insert_up = '<C-k>',
     insert_down = '<C-j>',
+    jump_prev = '<BS>',
+    jump_next = '\\',
   },
   fold = {
     open_cursor = '[',
@@ -87,6 +89,8 @@ keymap('i', navigator.insert_left, '<Left>', { })
 keymap('i', navigator.insert_right, '<Right>', { })
 keymap('i', navigator.insert_up, '<Up>', { })
 keymap('i', navigator.insert_down, '<Down>', { })
+keymap('n', navigator.jump_prev, '<C-o>', { noremap = true })
+keymap('n', navigator.jump_next, '<Tab>', { noremap = true })
 
 local fold = maps.fold or {}
 keymap('n', fold.open_cursor, 'zo', { })
