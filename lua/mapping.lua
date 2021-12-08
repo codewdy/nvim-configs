@@ -101,8 +101,8 @@ keymap('n', fold.close_all, 'zM', { })
 local wintabs = maps.wintabs or {}
 universal_normal_keymap(wintabs.next, ':WintabsNext<CR>', { noremap = true })
 universal_normal_keymap(wintabs.prev, ':WintabsPrevious<CR>', { noremap = true })
-universal_normal_keymap(wintabs.move_next, ':WintabsMove 1<CR>', { noremap = true })
-universal_normal_keymap(wintabs.move_prev, ':WintabsMove -1<CR>', { noremap = true })
+keymap('n', wintabs.move_next, ':WintabsMove 1<CR>', { noremap = true })
+keymap('n', wintabs.move_prev, ':WintabsMove -1<CR>', { noremap = true })
 universal_normal_keymap(wintabs.close, ':WintabsClose<CR>', { noremap = true })
 
 local lsp = maps.lsp or {}
