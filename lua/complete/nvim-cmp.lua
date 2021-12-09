@@ -62,12 +62,18 @@ cmp.setup {
   },
   -- You can set mappings if you want
   mapping = {
-    ["<CR>"] = cmp.mapping.confirm({select = false}),
-    ["<C-p>"] = cmp.mapping.select_prev_item(),
-    ["<C-n>"] = cmp.mapping.select_next_item(),
-    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    ["<C-e>"] = cmp.mapping.close(),
+    ["<CR>"] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+            cmp.close()
+        else
+            fallback()
+        end
+    end),
+    ["<C-k>"] = cmp.mapping.select_prev_item(),
+    ["<C-j>"] = cmp.mapping.select_next_item(),
+    ["<Up>"] = cmp.mapping.select_prev_item(),
+    ["<Down>"] = cmp.mapping.select_next_item(),
+    ["<C-z>"] = cmp.mapping.abort(),
     ["<Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
             cmp.select_next_item()
