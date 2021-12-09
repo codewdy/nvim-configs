@@ -125,3 +125,17 @@ end
 function udf.finder.fuzzy_find()
   telescope_builtin.current_buffer_fuzzy_find{}
 end
+
+if udf.lsp == nil then
+  udf.lsp = {}
+end
+
+function udf.lsp.definition()
+  telescope_builtin.lsp_definitions{
+  }
+end
+
+function udf.lsp.reference()
+  telescope_builtin.lsp_references{
+  }
+end

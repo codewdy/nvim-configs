@@ -44,14 +44,6 @@ function udf.lsp.hover()
   vim.lsp.buf.hover()
 end
 
-function udf.lsp.definition()
-  vim.lsp.buf.definition()
-end
-
-function udf.lsp.declaration()
-  vim.lsp.buf.declaration()
-end
-
 function udf.lsp.show_line_diagnostics()
   vim.lsp.diagnostic.show_line_diagnostics({
     focusable = false,
