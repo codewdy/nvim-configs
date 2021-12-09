@@ -4,7 +4,10 @@ local clangd_background_loader = require('clangd-helper/clangd-background-loader
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 lspconfig.clangd.setup{
   root_dir = require('configure').workspace,
-  on_attach = clangd_background_loader.on_attach,
+  on_attach = function(client, bufnr)
+    require "lsp_signature".on_attach()
+    clangd_background_loader.on_attach(client, bufnr)
+  end,
   capabilities = capabilities,
   -- cmd = { 'clangd', '--background-index', '--limit-results=0' },
 }
