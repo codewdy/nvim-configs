@@ -3,13 +3,14 @@
   doc_lines = 0,
   floating_window = true,
   floating_window_above_cur_line = true,
+  fix_pos = false,
   hint_enable = false,
   max_height = 12,
   max_width = 120,
   handler_opts = {
     border = "single"
   },
-  always_trigger = false,
+  always_trigger = true,
   auto_close_after = nil,
   extra_trigger_chars = {},
   zindex = 200,
