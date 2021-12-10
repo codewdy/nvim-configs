@@ -31,6 +31,43 @@ local configure = {
     },
     colorscheme = 'vscode',
   },
+  filetype = {
+    cpp = {
+      bo = {
+        tabstop = 2,
+        shiftwidth = 2,
+        softtabstop = 2,
+      },
+      wo = {
+        foldmethod='expr',
+        foldexpr='nvim_treesitter#foldexpr()',
+      }
+    },
+    c = 'cpp',
+    h = 'cpp',
+    hpp = 'cpp',
+    python = {
+      bo = {
+        tabstop = 4,
+        shiftwidth = 4,
+        softtabstop = 4,
+      },
+      wo = {
+        foldmethod='expr',
+        foldexpr='nvim_treesitter#foldexpr()',
+      }
+    },
+    default = {
+      bo = {
+        tabstop = 2,
+        shiftwidth = 2,
+        softtabstop = 2,
+      },
+      wo = {
+        foldmethod='indent',
+      }
+    }
+  },
   workspace = require('utils/path').root_pattern({{".root"}, {"compile_commands.json", "compile_flags.txt"}, {".git"}}),
 }
 
@@ -43,5 +80,27 @@ for k, v in pairs(configure.vim.g) do
 end
 
 require('colorscheme').set(configure.vim.colorscheme)
+
+udf.configure = udf.configure or {}
+
+function udf.configure.flush_filetype()
+  filetype = vim.bo.filetype
+  while type(configure.filetype[filetype]) == 'string' do
+    filetype = configure.filetype[filetype]
+  end
+  if configure.filetype[filetype] == nil then
+    filetype = 'default'
+  end
+
+  for k, v in pairs(configure.filetype[filetype].bo or {}) do
+    vim.bo[k] = v
+  end
+
+  for k, v in pairs(configure.filetype[filetype].wo or {}) do
+    vim.wo[k] = v
+  end
+end
+
+vim.cmd("au filetype * lua udf.configure.flush_filetype()")
 
 return configure
