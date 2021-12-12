@@ -7,6 +7,7 @@ lspconfig.clangd.setup{
   on_attach = function(client, bufnr)
     require "lsp_signature".on_attach()
     clangd_background_loader.on_attach(client, bufnr)
+    require 'illuminate'.on_attach(client)
   end,
   capabilities = capabilities,
   -- cmd = { 'clangd', '--background-index', '--limit-results=0' },
