@@ -33,7 +33,7 @@ require'lualine'.setup {
     lualine_b = {
       {
         'diagnostics',
-        sources = {'nvim_lsp', 'coc'}
+        sources = {'nvim_diagnostic'}
       }
     },
     lualine_c = remove_nil({
