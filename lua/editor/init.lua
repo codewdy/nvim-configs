@@ -29,3 +29,5 @@ pkg.req({'voldikss/vim-floaterm', config = [[require('editor/floaterm')]]})
 pkg.req({'codewdy/source-header-switcher.nvim', config = [[require('editor/source-header-switcher')]]})
 
 pkg.req({'ethanholz/nvim-lastplace', config = [[require('editor/nvim-lastplace')]]})
+
+pkg.req({'stevearc/dressing.nvim', config = [[require('editor/dressing')]]})

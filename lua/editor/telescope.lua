@@ -139,3 +139,8 @@ function udf.lsp.reference()
   telescope_builtin.lsp_references{
   }
 end
+
+function udf.lsp.code_action()
+  telescope_builtin.lsp_code_actions(themes.get_cursor({
+  }))
+end

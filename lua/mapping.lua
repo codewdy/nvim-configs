@@ -35,6 +35,8 @@ local maps = {
     diagnose_next = '<C-j>',
     diagnose_prev = '<C-k>',
     switch_source_header = '<C-a>',
+    code_action = '<C-u>',
+    rename = '<C-r>'
   },
   finder = {
     file = '<C-o>',
@@ -113,6 +115,8 @@ keymap('n', lsp.reference, ':lua udf.lsp.reference()<CR>', { noremap = true })
 keymap('n', lsp.diagnose, ':lua udf.lsp.show_line_diagnostics()<CR>', { noremap = true })
 keymap('n', lsp.diagnose_prev, ':lua udf.lsp.goto_prev_diagnostics()<CR>', { noremap = true })
 keymap('n', lsp.diagnose_next, ':lua udf.lsp.goto_next_diagnostics()<CR>', { noremap = true })
+keymap('n', lsp.code_action, ':lua udf.lsp.code_action()<CR>', { noremap = true })
+keymap('n', lsp.rename, ':lua udf.lsp.rename()<CR>', { noremap = true })
 universal_normal_keymap(lsp.switch_source_header, ':lua udf.switch_source_header()<CR>', { noremap = true })
 
 local finder = maps.finder or {}
