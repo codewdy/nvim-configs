@@ -1,6 +1,8 @@
 local maps = {
   esc = '<C-c>',
   save = '<C-s>',
+  undo = 'u',
+  redo = 'U',
   navigator = {
     goto = '<Space>',
     insert_left = '<C-h>',
@@ -81,6 +83,8 @@ end
 
 universal_keymap(maps.esc, '<Esc>', {})
 universal_normal_keymap(maps.save, ':w<CR>', { noremap = true })
+keymap('n', maps.undo, 'u', { noremap = true })
+keymap('n', maps.redo, '<C-r>', { noremap = true })
 
 local navigator = maps.navigator or {}
 keymap('n', navigator.goto, ':HopWord<CR>', { noremap = true })
