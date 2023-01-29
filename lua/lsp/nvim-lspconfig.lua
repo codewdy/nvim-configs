@@ -2,6 +2,7 @@ local lspconfig = require('lspconfig')
 local util = require 'lspconfig/util'
 local clangd_background_loader = require('clangd-helper/clangd-background-loader')
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+capabilities.textDocument.completion.completionItem.snippetSupport = false
 lspconfig.clangd.setup{
   root_dir = require('configure').workspace,
   on_attach = function(client, bufnr)
@@ -10,7 +11,7 @@ lspconfig.clangd.setup{
     require 'illuminate'.on_attach(client)
   end,
   capabilities = capabilities,
-  -- cmd = { 'clangd', '--background-index', '--limit-results=0' },
+  cmd = { 'clangd', '--header-insertion=iwyu', '--header-insertion-decorators=true', '--all-scopes-completion=true', '--function-arg-placeholders=0' },
 }
 lspconfig.sumneko_lua.setup{
   root_dir = require('configure').workspace,
