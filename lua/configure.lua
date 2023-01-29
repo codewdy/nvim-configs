@@ -25,6 +25,7 @@ local configure = {
       signcolumn = 'yes',
       hidden = true,  -- make buffer management can hide buffer without save.
       cursorline = true,
+      clipboard = "unnamedplus",
     },
     g = {
       loaded_matchit = 1,  -- disable matchit becasue ampping troubles.
