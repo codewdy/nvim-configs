@@ -63,8 +63,8 @@ cmp.setup {
   -- You can set mappings if you want
   mapping = {
     ["<CR>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-            cmp.close()
+        if cmp.visible() and cmp.core.view:get_selected_entry() then
+            cmp.confirm({select = false})
         else
             fallback()
         end
