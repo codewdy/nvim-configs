@@ -12,6 +12,14 @@ lspconfig.clangd.setup{
   capabilities = capabilities,
   -- cmd = { 'clangd', '--background-index', '--limit-results=0' },
 }
+lspconfig.sumneko_lua.setup{
+  root_dir = require('configure').workspace,
+  on_attach = function(client, bufnr)
+    require "lsp_signature".on_attach()
+    require 'illuminate'.on_attach(client)
+  end,
+  capabilities = capabilities,
+}
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = clangd_background_loader.on_publish_diagnostics_wapper(
   vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
