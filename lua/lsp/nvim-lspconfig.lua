@@ -1,7 +1,7 @@
 local lspconfig = require('lspconfig')
 local util = require 'lspconfig/util'
 local clangd_background_loader = require('clangd-helper/clangd-background-loader')
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 lspconfig.clangd.setup{
   root_dir = require('configure').workspace,
   on_attach = function(client, bufnr)
