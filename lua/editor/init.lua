@@ -34,3 +34,5 @@ pkg.req({'ethanholz/nvim-lastplace', config = [[require('editor/nvim-lastplace')
 pkg.req({'stevearc/dressing.nvim', config = [[require('editor/dressing')]]})
 
 pkg.req({'stevearc/aerial.nvim', config = [[require('editor/aerial')]]})
+
+pkg.req({'lewis6991/gitsigns.nvim', config = [[require('editor/gitsigns')]]})
