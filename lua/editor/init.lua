@@ -2,7 +2,8 @@ local pkg = require('pkg')
 
 pkg.req({'rhysd/accelerated-jk', config = [[require('editor/accelerated-jk')]]})
 
-pkg.req({'phaazon/hop.nvim', branch='v1', config = [[require('editor/hop')]]})
+-- pkg.req({'phaazon/hop.nvim', branch='v1', config = [[require('editor/hop')]]})
+pkg.req({'ggandor/leap.nvim', config = [[require('editor/leap')]]})
 
 pkg.req({'kyazdani42/nvim-web-devicons'})
 pkg.req({'hoob3rt/lualine.nvim', config = [[require('editor/lualine')]]})

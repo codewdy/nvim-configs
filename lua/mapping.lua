@@ -87,7 +87,7 @@ keymap('n', maps.undo, 'u', { noremap = true })
 keymap('n', maps.redo, '<C-r>', { noremap = true })
 
 local navigator = maps.navigator or {}
-keymap('n', navigator.goto, ':HopWord<CR>', { noremap = true })
+-- keymap('n', navigator.goto, ':HopWord<CR>', { noremap = true })
 keymap('i', navigator.insert_left, '<Left>', { })
 keymap('i', navigator.insert_right, '<Right>', { })
 keymap('i', navigator.insert_up, '<Up>', { })
