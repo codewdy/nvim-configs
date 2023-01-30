@@ -36,3 +36,15 @@ pkg.req({'stevearc/dressing.nvim', config = [[require('editor/dressing')]]})
 pkg.req({'stevearc/aerial.nvim', config = [[require('editor/aerial')]]})
 
 pkg.req({'lewis6991/gitsigns.nvim', config = [[require('editor/gitsigns')]]})
+
+pkg.req({'anuvyklack/pretty-fold.nvim', config = [[require('editor/pretty-fold')]]})
+
+pkg.req{ 'anuvyklack/fold-preview.nvim',
+   requires = 'anuvyklack/keymap-amend.nvim',
+   config = function()
+      require('fold-preview').setup({
+        auto=400
+         -- Your configuration goes here.
+      })
+   end
+}

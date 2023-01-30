@@ -178,7 +178,7 @@ require("aerial").setup({
 
   -- Fold code when you open/collapse symbols in the tree.
   -- Only works when manage_folds = true
-  link_tree_to_folds = true,
+  link_tree_to_folds = false,
 
   -- Set default symbol icons to use patched font icons (see https://www.nerdfonts.com/)
   -- "auto" will set it to true if nvim-web-devicons or lspkind-nvim is installed.
