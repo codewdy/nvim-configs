@@ -110,7 +110,7 @@ end
 function udf.finder.grep()
   local workspace = configure.workspace('.')
   telescope_builtin.live_grep{
-    search_dirs={workspace}, cwd=workspace, default_text=vim.fn.expand("<cword>")
+    search_dirs={workspace}, cwd=workspace
   }
 end
 
@@ -124,7 +124,6 @@ end
 
 function udf.finder.fuzzy_find()
   telescope_builtin.current_buffer_fuzzy_find{
-    default_text=vim.fn.expand("<cword>")
   }
 end
 
