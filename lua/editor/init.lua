@@ -32,3 +32,5 @@ pkg.req({'codewdy/source-header-switcher.nvim', config = [[require('editor/sourc
 pkg.req({'ethanholz/nvim-lastplace', config = [[require('editor/nvim-lastplace')]]})
 
 pkg.req({'stevearc/dressing.nvim', config = [[require('editor/dressing')]]})
+
+pkg.req({'stevearc/aerial.nvim', config = [[require('editor/aerial')]]})
